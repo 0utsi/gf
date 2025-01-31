@@ -6,50 +6,54 @@ import Image from "next/image";
 import { useMemo } from "react";
 import logo from "../../../public/logo.svg";
 import flag from "../../../public/polish-flag.svg";
+import Link from "next/link";
+import poundIcon from "../../../public/pound-icon.svg";
 
 export default function TopBar() {
 	const menuItems = useMemo(
 		() => [
-			{ label: "Obozy", href: "/obozy" },
-			{ label: "Półkolonie", href: "/polkolonie" },
-			{ label: "Wycieczki szkolne", href: "/wycieczki-szkolne" },
-			{ label: "Atrakcje", href: "/atrakcje" },
-			{ label: "Noclegi dla grup", href: "/noclegi-grupy" },
+			{ label: "Obozy" },
+			{ label: "Półkolonie" },
+			{ label: "Wycieczki szkolne" },
+			{ label: "Atrakcje" },
+			{ label: "Noclegi dla grup" },
 		],
 		[]
 	);
+
 	return (
 		<Stack
 			direction="row"
 			alignItems="center"
 			justifyContent="space-between"
-			px={10}
-			py={2}
-			boxShadow={2}
+			className=" py-4 shadow-sm bg-white"
 		>
-			<Stack direction="row" alignItems="center" spacing={4}>
+			<Stack direction="row" alignItems="center" spacing={2}>
 				<Image src={logo} width={150} height={75} alt="logo" />
-				<Stack direction="row" spacing={2}>
-					{menuItems.map(({ label, href }) => (
-						<Button
-							className="text-green!"
+				<Stack direction="row" spacing={6}>
+					{menuItems.map(({ label }) => (
+						<Link
 							key={label}
-							variant="text"
-							href={href}
+							href=""
+							className="text-gray-800 text-sm font-light hover:scale-105 transition"
 						>
 							{label}
-						</Button>
+						</Link>
 					))}
 				</Stack>
 			</Stack>
 			<Stack direction="row" alignItems="center" spacing={3}>
-				<IconButton>
-					<Image src={flag} width={40} height={40} alt="flaga" />
+				<IconButton disabled>
+					<Image src={flag} width={30} height={30} alt="flag" />
 				</IconButton>
-				<IconButton>
-					<Image src={flag} width={40} height={40} alt="flaga" />
+				<IconButton disabled>
+					<Image src={poundIcon} width={12} height={12} alt="currency" />
 				</IconButton>
-				<Button variant="text" startIcon={<PersonOutlineIcon />}>
+				<Button
+					startIcon={<PersonOutlineIcon />}
+					disabled
+					className="text-black"
+				>
 					Zaloguj się
 				</Button>
 			</Stack>
