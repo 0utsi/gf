@@ -5,6 +5,9 @@ export default {
 		"./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
 		"./src/components/**/*.{js,ts,jsx,tsx,mdx}",
 		"./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+		"./src/app/user/**/*.{js,ts,jsx,tsx,mdx}",
+		"./src/app/offers/user/**/*.{js,ts,jsx,tsx,mdx}",
+		"./src/app/user/offers/components/**/*.{js,ts,jsx,tsx,mdx}",
 	],
 	theme: {
 		theme: {
@@ -32,10 +35,12 @@ export default {
 			},
 			fontSize: {
 				xs: '9px',
-				sm: '12px',
+				sm: '13px',
 				md: '15px',
 				xl: '18px',
-				xxl: '22px'
+				xxl: '22px',
+				xl3: '30px',
+				xl4: '40px',
 			},
 			spacing: {
 				0: '0rem', // 0px
