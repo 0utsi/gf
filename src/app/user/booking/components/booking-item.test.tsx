@@ -23,7 +23,7 @@ const mockBooking = {
 };
 
 describe("booking-item", () => {
-	it("renders corect booking information from passed data", async () => {
+	it("renders correct booking information from passed data", async () => {
 		const { findByText } = render(<BookingItem booking={mockBooking} />);
 		expect(await findByText(/Asia trip/i)).toBeInTheDocument();
 		expect(await findByText(/2025-02-05/i)).toBeInTheDocument();
