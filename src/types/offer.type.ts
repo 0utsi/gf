@@ -1,4 +1,5 @@
 export interface Offer {
+	id: string;
 	name: string;
 	description: string;
 	location: { city: string; province: string };

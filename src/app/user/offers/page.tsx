@@ -11,7 +11,7 @@ export default function Page() {
 			</Typography>
 			<Box
 				sx={{
-					p: 2,
+					p: 1,
 					display: "grid",
 					gap: 2,
 					gridTemplateColumns: {
