@@ -8,7 +8,7 @@ import {
 	Box,
 	Chip,
 } from "@mui/material";
-import { Offer } from "../../../../types/offer.type";
+import { Offer } from "@/types/offer.type";
 import { useRouter } from "next/navigation";
 export default function OfferCard({ offer }: { offer: Offer }) {
 	const { push } = useRouter();
@@ -87,7 +87,7 @@ export default function OfferCard({ offer }: { offer: Offer }) {
 									? `Cena: ${min_price / 100} - ${max_price / 100} PLN`
 									: "Brak ceny"
 							}
-							sx={{ color: "#f26852" }}
+							color="primary"
 							variant="outlined"
 							size="small"
 						/>

@@ -29,7 +29,14 @@ export default function TopBar() {
 			className=" py-4 shadow-sm bg-white"
 		>
 			<Stack direction="row" alignItems="center" spacing={2}>
-				<Image src={logo} width={150} height={75} alt="logo" />
+				<Image
+					src={logo}
+					width={150}
+					height={75}
+					alt="logo"
+					priority
+					className="w-auto h-auto"
+				/>
 				<Stack direction="row" spacing={6}>
 					{menuItems.map(({ label }) => (
 						<Link
@@ -44,10 +51,17 @@ export default function TopBar() {
 			</Stack>
 			<Stack direction="row" alignItems="center" spacing={3}>
 				<IconButton disabled>
-					<Image src={flag} width={30} height={30} alt="flag" />
+					<Image priority src={flag} width={30} height={30} alt="flag" />
 				</IconButton>
 				<IconButton disabled>
-					<Image src={poundIcon} width={12} height={12} alt="currency" />
+					<Image
+						priority
+						src={poundIcon}
+						width={12}
+						className="w-auto h-auto"
+						height={12}
+						alt="currency"
+					/>
 				</IconButton>
 				<Button
 					startIcon={<PersonOutlineIcon />}

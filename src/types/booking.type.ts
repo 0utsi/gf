@@ -13,9 +13,16 @@ export interface Booking {
 	status_label: string;
 	payment_status: string;
 	product_data: ProductData;
+	trip_data: TripData
+	company_name: string;
 }
 
 
 interface ProductData {
 	description: string
+}
+
+interface TripData {
+	start_date: string;
+	end_date: string;
 }
