@@ -1,7 +1,7 @@
 [
 	{
 		"id": "IN_H1QHK1RSOD",
-		"name": "Wycieczka szkolna do Gdańska",
+		"name": "Kolonie",
 		"description": "Opis grup testowych 2",
 		"additional_info_text": null,
 		"conditions_text_short": null,
@@ -76,7 +76,7 @@
 		"admin_comment": null,
 		"categories": null,
 		"location_types": null,
-		"company_name": "KURCZAK",
+		"company_name": "Colon",
 		"search_hints": null,
 		"tsv": "'2':4B 'grup':2B 'opi':1B 'testowych':3B",
 		"min_price": 111100,

@@ -1,9 +1,9 @@
 "use client";
 
 import { Box } from "@mui/material";
-import TopBar from "../../components/layout/top-bar";
+import TopBar from "@/components/layout/top-bar";
 import { ReactNode } from "react";
-import Sidebar from "../../components/layout/side-bar";
+import Sidebar from "@/components/layout/side-bar";
 
 interface MainLayoutProps {
 	children: ReactNode;

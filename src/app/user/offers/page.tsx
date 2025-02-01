@@ -1,5 +1,5 @@
-import products from "../../../data/response_products.json";
-import { Offer } from "../../../types/offer.type";
+import products from "@/data/response_products.json";
+import { Offer } from "@/types/offer.type";
 import OfferCard from "./components/offer-card";
 import { Box, Stack, Typography } from "@mui/material";
 

@@ -1,11 +1,10 @@
 "use client";
 
 import { List, Stack, Typography } from "@mui/material";
-import bookings from "../../../../data/response_bookings.json";
-import BookingItem from "../components/booking-item";
-import { Booking } from "../../../../types/booking.type";
+import bookings from "@/data/response_bookings.json";
+import BookingsList from "../components/booking-list";
 import filter from "lodash/filter";
-import { useLastPathSegment } from "../../../../hooks/useLastPathSegment";
+import { useLastPathSegment } from "@/hooks/useLastPathSegment";
 
 export default function Page() {
 	const product_id = useLastPathSegment();
@@ -26,12 +25,7 @@ export default function Page() {
 				Rezerwacje
 			</Typography>
 			<List>
-				{productBooking.map((booking) => (
-					<BookingItem
-						key={booking.id}
-						booking={booking as unknown as Booking}
-					/>
-				))}
+				<BookingsList bookings={productBooking} />
 			</List>
 		</Stack>
 	);
