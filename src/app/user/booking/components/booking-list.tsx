@@ -12,7 +12,7 @@ interface BookingsListProps {
 
 export default function BookingsList({
 	bookings,
-	pageSize = 5,
+	pageSize = 4,
 }: BookingsListProps) {
 	const [page, setPage] = useState(1);
 	const totalPages = Math.ceil(bookings.length / pageSize);

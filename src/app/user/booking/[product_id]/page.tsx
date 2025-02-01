@@ -21,8 +21,8 @@ export default function Page() {
 
 	return (
 		<Stack>
-			<Typography variant="h5" className="text-blue-900 text-xl">
-				Rezerwacje
+			<Typography variant="h5" color="secondary">
+				{`Rezerwacje dla oferty ${product_id}`}
 			</Typography>
 			<List>
 				<BookingsList bookings={productBooking} />

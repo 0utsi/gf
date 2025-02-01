@@ -8,9 +8,11 @@ import {
 	Stack,
 } from "@mui/material";
 import { Booking } from "@/types/booking.type";
-import AttractionsIcon from "@mui/icons-material/Attractions";
 import { useFormatDate } from "@/utils/use-format-date";
+import { useRandomIcon } from "../../../../hooks/userRandomIcon";
 export default function BookingItem({ booking }: { booking: Booking }) {
+	const Icon = useRandomIcon();
+
 	const {
 		created_at,
 		product_data,
@@ -30,7 +32,7 @@ export default function BookingItem({ booking }: { booking: Booking }) {
 			sx={{ width: "100%", display: "flex", borderBottom: "1px solid black" }}
 		>
 			<ListItemAvatar>
-				<AttractionsIcon sx={{ fontSize: "3rem" }} />
+				<Icon sx={{ fontSize: "3rem" }} />
 			</ListItemAvatar>
 			<Box
 				sx={{
