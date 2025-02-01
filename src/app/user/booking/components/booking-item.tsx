@@ -1,14 +1,15 @@
 import React from "react";
 import {
 	Typography,
-	Avatar,
 	ListItem,
 	ListItemAvatar,
 	Box,
 	Divider,
+	Stack,
 } from "@mui/material";
-import { Booking } from "../../../../types/booking.type";
-
+import { Booking } from "@/types/booking.type";
+import AttractionsIcon from "@mui/icons-material/Attractions";
+import { useFormatDate } from "@/utils/use-format-date";
 export default function BookingItem({ booking }: { booking: Booking }) {
 	const {
 		created_at,
@@ -20,12 +21,16 @@ export default function BookingItem({ booking }: { booking: Booking }) {
 		trip_name,
 		status_label,
 		payment_status,
+		trip_data,
+		company_name,
 	} = booking;
 
 	return (
-		<ListItem sx={{ width: "100%", display: "flex" }}>
+		<ListItem
+			sx={{ width: "100%", display: "flex", borderBottom: "1px solid black" }}
+		>
 			<ListItemAvatar>
-				<Avatar alt={""} src="/static/images/avatar/1.jpg" />
+				<AttractionsIcon sx={{ fontSize: "3rem" }} />
 			</ListItemAvatar>
 			<Box
 				sx={{
@@ -35,7 +40,23 @@ export default function BookingItem({ booking }: { booking: Booking }) {
 					flex: 1,
 				}}
 			>
-				<Typography variant="h5">{trip_name}</Typography>
+				<Stack
+					direction="row"
+					justifyContent="space-between"
+					alignItems="center"
+				>
+					<Box>
+						<Typography variant="h5" color="primary">
+							{trip_name}
+						</Typography>
+						<Typography sx={{ fontSize: "10px" }} color="secondary">
+							{company_name}
+						</Typography>
+					</Box>
+					<Typography sx={{ fontSize: "12px" }}>
+						{`Od ${trip_data.start_date} do ${trip_data.end_date}`}
+					</Typography>
+				</Stack>
 				<Divider />
 				<Box
 					sx={{
@@ -48,9 +69,7 @@ export default function BookingItem({ booking }: { booking: Booking }) {
 						{`Status: ${status_label} (${payment_status})`}
 					</Typography>
 					<Typography variant="body2" sx={{ color: "text.primary" }}>
-						{`Termin płatności: ${new Date(
-							payment_due_date
-						).toLocaleDateString()}`}
+						{`Termin płatności: ${useFormatDate(payment_due_date)}`}
 					</Typography>
 				</Box>
 				<Box sx={{ display: "flex", justifyContent: "space-between" }}>
@@ -58,7 +77,7 @@ export default function BookingItem({ booking }: { booking: Booking }) {
 						{`Cena: ${total_price} PLN (oryginalna: ${original_total_price} PLN)`}
 					</Typography>
 					<Typography variant="body2" sx={{ color: "text.primary" }}>
-						{`Data rezerwacji: ${new Date(created_at).toLocaleDateString()}`}
+						{`Data rezerwacji: ${useFormatDate(created_at)}`}
 					</Typography>
 				</Box>
 				<Box sx={{ display: "flex", justifyContent: "space-between" }}>
