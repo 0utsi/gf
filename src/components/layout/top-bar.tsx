@@ -32,6 +32,7 @@ export default function TopBar() {
 				<Image
 					src={logo}
 					width={150}
+					id="logo"
 					height={75}
 					alt="logo"
 					priority
