@@ -22,7 +22,7 @@ export default function NotFound() {
 			</Typography>
 			<Link href="/user/booking" passHref>
 				<Button variant="contained" color="primary">
-					Powrót
+					Przejdź do ofert
 				</Button>
 			</Link>
 		</Box>
